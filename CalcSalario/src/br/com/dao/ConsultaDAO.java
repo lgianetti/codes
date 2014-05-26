@@ -83,6 +83,14 @@ public class ConsultaDAO {
 		return funcionarios;
 		
 	}
+
+	public ArrayList<Funcionario> getFuncionarios() {
+		return funcionarios;
+	}
+
+	public ArrayList<Desconto> getDescontos() {
+		return descontos;
+	}
 	
 	
 }
