@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import br.com.bean.Desconto;
 import br.com.bean.Funcionario;
+import br.com.factory.ConnectionFactory;
 
 public class ConsultaDAO {
 	/*
