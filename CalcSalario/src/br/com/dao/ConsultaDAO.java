@@ -36,7 +36,7 @@ public class ConsultaDAO {
 		funcionarios = new ArrayList<Funcionario>();
 		descontos = new ArrayList<Desconto>();
 		
-		connection = new ConnectionFactory.getConnection();
+		connection = new ConnectionFactory().getConnection();
 		
 		if(connection != null){
 			try{
@@ -71,10 +71,16 @@ public class ConsultaDAO {
 			}catch(SQLException e){
 				e.printStackTrace();
 			}finally{
-				connection.close();
-			}
-			return funcionarios;
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}				
 		}
+		
+		return funcionarios;
 		
 	}
 	
