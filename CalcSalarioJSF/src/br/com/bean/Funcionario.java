@@ -88,4 +88,37 @@ public class Funcionario {
 	}
 	
 	
+	
+	/**
+	 * @return retorna o valor do id_funcionario atraves do atributo @id_funcionario
+	 * */
+	@Override
+	public String toString() {
+		return Integer.toString(id_funcionario);
+	}
+
+	/**
+	 * @return retorna o hashcode baseado no @id_funcionario
+	 * */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id_funcionario == 0) ? 0 : Integer.toString(id_funcionario)).hashCode();
+		return result;
+	}
+
+	/**
+	 * @return retorna true se o @id_funcionario for igual e false se nao for
+	 * */
+	@Override
+	public boolean equals(Object obj) {
+		if(obj != null && obj instanceof Funcionario){
+			Desconto other = (Desconto) obj;
+			if (Integer.toString(this.getId_funcionario()).equals(Integer.toString(other.getId_funcionario())))
+			return true;
+		}
+		return false;
+	}
+	
 }

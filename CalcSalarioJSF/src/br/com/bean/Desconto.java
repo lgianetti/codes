@@ -68,5 +68,36 @@ public class Desconto {
 		this.vl_desconto = vl_desconto;
 	}
 	
+	/**
+	 * @return retorna o valor do desconto atraves do atributo @vl_desconto
+	 * */
+	@Override
+	public String toString() {
+		return vl_desconto.toString();
+	}
+
+	/**
+	 * @return retorna o hashcode baseado no @id_desconto
+	 * */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id_desconto == 0) ? 0 : Integer.toString(id_desconto)).hashCode();
+		return result;
+	}
+
+	/**
+	 * @return retorna true se o @id_desconto for igual e false se nao for
+	 * */
+	@Override
+	public boolean equals(Object obj) {
+		if(obj != null && obj instanceof Desconto){
+			Desconto other = (Desconto) obj;
+			if (Integer.toString(this.getId_desconto()).equals(other.getId_desconto()))
+			return true;
+		}
+		return false;
+	}
 	
 }
