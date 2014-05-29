@@ -3,16 +3,21 @@ package br.com.bean;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-public class Funcionario {
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+@ManagedBean(name="funcionarioBean")
+@RequestScoped
+public class FuncionarioBean {
 
 	private int id_funcionario;
 	private String nm_cliente;
 	private BigDecimal vl_salario_bruto;
 	private BigDecimal vl_salario_liquido;
-	private ArrayList<Desconto> descontos;
+	private ArrayList<DescontoBean> descontos;
 	
 	
-	public Funcionario(){}
+	public FuncionarioBean(){}
 	
 	/**
 	 * Metodo construtor do objeto sobrecarregado
@@ -23,7 +28,7 @@ public class Funcionario {
 	 * @param BigDecimal
 	 * @param Arraylist<Desconto>
 	 * */
-	public Funcionario(int id_funcionario, String nm_cliente, BigDecimal vl_salario_bruto, BigDecimal vl_salario_liquido, ArrayList<Desconto> arrayList){
+	public FuncionarioBean(int id_funcionario, String nm_cliente, BigDecimal vl_salario_bruto, BigDecimal vl_salario_liquido, ArrayList<DescontoBean> arrayList){
 		this.id_funcionario = id_funcionario;
 		this.nm_cliente = nm_cliente;
 		this.vl_salario_bruto = vl_salario_bruto;
@@ -76,14 +81,14 @@ public class Funcionario {
 		this.vl_salario_liquido = vl_salario_liquido;
 	}
 
-	public ArrayList<Desconto> getDescontos() {
+	public ArrayList<DescontoBean> getDescontos() {
 		return descontos;
 	}
 
 	/**
 	 * @param Arralist<Desconto>
 	 * */
-	public void setDescontos(ArrayList<Desconto> descontos) {
+	public void setDescontos(ArrayList<DescontoBean> descontos) {
 		this.descontos = descontos;
 	}
 	
@@ -113,8 +118,8 @@ public class Funcionario {
 	 * */
 	@Override
 	public boolean equals(Object obj) {
-		if(obj != null && obj instanceof Funcionario){
-			Desconto other = (Desconto) obj;
+		if(obj != null && obj instanceof FuncionarioBean){
+			DescontoBean other = (DescontoBean) obj;
 			if (Integer.toString(this.getId_funcionario()).equals(Integer.toString(other.getId_funcionario())))
 			return true;
 		}

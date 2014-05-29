@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class DescontoTest {
 	
-	private Desconto desconto = new Desconto(1, 1, new BigDecimal("10.23"));
+	private DescontoBean desconto = new DescontoBean(1, 1, new BigDecimal("10.23"));
 	
 	
 	@SuppressWarnings("deprecation")

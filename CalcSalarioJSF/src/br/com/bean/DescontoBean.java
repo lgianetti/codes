@@ -2,13 +2,18 @@ package br.com.bean;
 
 import java.math.BigDecimal;
 
-public class Desconto {
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+@ManagedBean(name="descontoBean")
+@RequestScoped
+public class DescontoBean {
 
 	private int id_funcionario;
 	private int id_desconto;
 	private BigDecimal vl_desconto;
 	
-	public Desconto(){}
+	public DescontoBean(){}
 	
 	/**
 	 * Metodo de construçao do objeto Desconto
@@ -16,7 +21,7 @@ public class Desconto {
 	 * @param int 
 	 * @param BigDecimal 
 	 * */
-	public Desconto(int id_funcionario, int id_desconto, BigDecimal vl_desconto){
+	public DescontoBean(int id_funcionario, int id_desconto, BigDecimal vl_desconto){
 		this.id_funcionario = id_funcionario;
 		this.id_desconto = id_desconto;
 		this.vl_desconto = vl_desconto;
@@ -92,8 +97,8 @@ public class Desconto {
 	 * */
 	@Override
 	public boolean equals(Object obj) {
-		if(obj != null && obj instanceof Desconto){
-			Desconto other = (Desconto) obj;
+		if(obj != null && obj instanceof DescontoBean){
+			DescontoBean other = (DescontoBean) obj;
 			if (Integer.toString(this.getId_desconto()).equals(other.getId_desconto()))
 			return true;
 		}
