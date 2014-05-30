@@ -102,28 +102,34 @@ public class FuncionarioBean {
 		return Integer.toString(id_funcionario);
 	}
 
-	/**
-	 * @return retorna o hashcode baseado no @id_funcionario
-	 * */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id_funcionario == 0) ? 0 : Integer.toString(id_funcionario)).hashCode();
+		result = prime * result + id_funcionario;
+		result = prime * result
+				+ ((nm_cliente == null) ? 0 : nm_cliente.hashCode());
 		return result;
 	}
 
-	/**
-	 * @return retorna true se o @id_funcionario for igual e false se nao for
-	 * */
 	@Override
 	public boolean equals(Object obj) {
-		if(obj != null && obj instanceof FuncionarioBean){
-			DescontoBean other = (DescontoBean) obj;
-			if (Integer.toString(this.getId_funcionario()).equals(Integer.toString(other.getId_funcionario())))
+		if (this == obj)
 			return true;
-		}
-		return false;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		FuncionarioBean other = (FuncionarioBean) obj;
+		if (id_funcionario != other.id_funcionario)
+			return false;
+		if (nm_cliente == null) {
+			if (other.nm_cliente != null)
+				return false;
+		} else if (!nm_cliente.equals(other.nm_cliente))
+			return false;
+		return true;
 	}
+
 	
 }

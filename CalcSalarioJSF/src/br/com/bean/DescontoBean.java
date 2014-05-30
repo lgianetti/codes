@@ -81,28 +81,38 @@ public class DescontoBean {
 		return vl_desconto.toString();
 	}
 
-	/**
-	 * @return retorna o hashcode baseado no @id_desconto
-	 * */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id_desconto == 0) ? 0 : Integer.toString(id_desconto)).hashCode();
+		result = prime * result + id_desconto;
+		result = prime * result + id_funcionario;
+		result = prime * result
+				+ ((vl_desconto == null) ? 0 : vl_desconto.hashCode());
 		return result;
 	}
 
-	/**
-	 * @return retorna true se o @id_desconto for igual e false se nao for
-	 * */
 	@Override
 	public boolean equals(Object obj) {
-		if(obj != null && obj instanceof DescontoBean){
-			DescontoBean other = (DescontoBean) obj;
-			if (Integer.toString(this.getId_desconto()).equals(other.getId_desconto()))
+		if (this == obj)
 			return true;
-		}
-		return false;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DescontoBean other = (DescontoBean) obj;
+		if (id_desconto != other.id_desconto)
+			return false;
+		if (id_funcionario != other.id_funcionario)
+			return false;
+		if (vl_desconto == null) {
+			if (other.vl_desconto != null)
+				return false;
+		} else if (!vl_desconto.equals(other.vl_desconto))
+			return false;
+		return true;
 	}
+
+	
 	
 }
